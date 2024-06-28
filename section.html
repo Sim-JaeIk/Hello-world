@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>심재익(2020E7025)</title>
+    <style>
+      /* 전체 페이지를 덮는 컨테이너에 flex 스타일 적용 */
+      body,
+      html {
+        height: 100%; /* 전체 높이 설정 */
+        margin: 0; /* 기본 마진 제거 */
+        display: flex; /* Flexbox 활성화 */
+        align-items: center; /* 세로 중앙 정렬 */
+        justify-content: center; /* 가로 중앙 정렬 */
+      }
+      #future {
+        background: linear-gradient(
+          170deg,
+          hsla(91, 45%, 67%, 1) 0%,
+          hsla(210, 62%, 65%, 1) 100%
+        );
+        min-height: 100vh; /* 확실한 그라데이션 효과를 위해 높이 최소화 */
+      }
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        background-color: #282828;
+        color: #f1f1f1;
+        padding: 1em 3em;
+        border-radius: 1em;
+        width: 500px;
+        height: 60px;
+      }
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        padding: 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+      .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        border-width: 8px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+        transform: translateX(-50%);
+      }
+      hr {
+        width: 100%; /* 너비를 최대로 설정 */
+        border: 1px solid black; /* 눈에 띄게 하기 위해 테두리 설정 */
+        margin: 20px 0; /* 위아래 여백 추가 */
+      }
+    </style>
+  </head>
+  
+  <body id="future">
+    
+    <div class="tooltip">
+      컴퓨터 공학과 20학번 심재익입니다. <br />
+      자바 스크립트를 수강하고 있는 학생입니다. <br />
+      <pre><a href="introduce.html" target="section" title="컴공소개" style="color: white;">컴퓨터공학과가 궁금하다면?👈</a>                         여기에 마우스 올려주세용</pre>
+      <div class="tooltiptext">환영합니다. 잘 봐주세요~😆</div>
+      <hr>
+    </div>
+  </body>
+</html>

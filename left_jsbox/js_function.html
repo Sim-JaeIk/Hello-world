@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js_function</title>
+    <style>
+      .container {
+        width: 100%;
+        height: 100%;
+        --color: #e1e1e1;
+        background-color: #f3f3f3;
+        background-image: linear-gradient(
+            0deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          ),
+          linear-gradient(
+            90deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          );
+        background-size: 55px 55px;
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+      }
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .bordered-pre {
+        border: 2px solid #4caf50; /* 테두리 색상을 녹색으로 설정 */
+        padding: 10px; /* 내부 여백을 추가하여 텍스트와 테두리 사이 간격을 조정 */
+        margin: 20px; /* 외부 여백을 추가하여 다른 요소들과의 간격을 조정 */
+        overflow: auto; /* 내용이 넘치면 스크롤바를 표시 */
+        background-color: #e6dddd; /* 배경색 설정 */
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+        width: 1150px;
+      }
+      .gugudan td {
+        border: 1px solid #000; /* 각 단마다 테두리 추가 */
+        padding: 10px;
+        background-color: #fff; /* 배경색 추가 */
+      }
+      h1 {
+        color: rgb(205, 59, 29);
+      }
+    </style>
+  </head>
+  <body class="container">
+    <div class="bordered-pre">
+        <h1>Java Script</h1>
+        <hr>
+        <h2>자바스크립트 설명과 간단한 예</h2>
+        <script>
+            // Date 객체 생성
+            let today = new Date(); 
+            
+            // Date 객체의 toLocaleString() 메소드 호출
+            document.write("현재 시간 : " + today.toLocaleString() + "<br>");
+            
+            // String 객체 생성
+            let mystr= new String("자바스크립트 공부하기");
+            document.write("mystr의 내용 : " + mystr + "<br>");
+            document.write("mystr의 길이 : " + mystr.length + "<br>");
+        </script>
+        <hr>
+        <pre>
+            &lt;script&gt;
+                // Date 객체 생성
+                let today = new Date(); 
+                
+                // Date 객체의 toLocaleString() 메소드 호출
+                document.write("현재 시간 : " + today.toLocaleString() + "&lt;br&gt;");
+                
+                // String 객체 생성
+                let mystr= new String("자바스크립트 공부하기");
+                document.write("mystr의 내용 : " + mystr + "&lt;br&gt;");
+                document.write("mystr의 길이 : " + mystr.length + "&lt;br&gt;");
+            &lt;/script&gt;
+        </pre>
+        <hr>
+        <p>설명<br>
+            Date 객체를 생성하여 현재 날짜와 시간을 today 변수에 저장합니다. <br>
+            toLocaleString() 메소드를 사용하여 today 객체의 현재 날짜와 시간을 현지화된 문자열 형식으로 출력합니다. <br>
+            자바스크립트 공부하기"라는 문자열을 포함하는 String 객체를 생성하여 mystr 변수에 저장합니다. <br>
+            mystr 객체의 내용과 길이를 출력합니다.
+        </p>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------->
+
+    <div class="bordered-pre">
+        <h1>Web Dialog</h1>
+        <hr>
+        <script>
+            function showAlert() {
+                alert("이것은 알림 대화상자입니다!");
+            }
+        </script>
+            <h2>1. Alert 설명과 사용 예</h2>
+            <button onclick="showAlert()">알림 표시</button>
+        <hr>
+        <xmp>
+            <script>
+                function showAlert() {
+                    alert("이것은 알림 대화상자입니다!");
+                }
+            </script>
+                <h2>1. Alert 설명과 사용 예</h2>
+                <button onclick="showAlert()">알림 표시</button>
+            <hr>
+        </xmp>
+        <hr>
+        <p>설명<br>
+            Alert는 사용자에게 메시지를 표시하고 확인을 받는 가장 간단한 방법입니다. <br>
+            이 코드는 버튼을 클릭하면 alert 함수가 호출되어 알림 대화상자가 표시됩니다.
+        </p>
+        
+        <hr>
+
+        <h2>2. CONFIRM 설명과 사용 예</h2>
+        <script>
+            function showConfirm() {
+                let result = confirm("이 작업을 계속하시겠습니까?");
+                if (result) {
+                    alert("확인을 선택했습니다.");
+                } else {
+                    alert("취소를 선택했습니다.");
+                }
+            }
+            </script>
+            <button onclick="showConfirm()">확인 대화상자 표시</button>
+        <hr>
+        <xmp>
+            <h2>2. CONFIRM 설명과 사용 예</h2>
+            <script>
+                function showConfirm() {
+                    let result = confirm("이 작업을 계속하시겠습니까?");
+                    if (result) {
+                        alert("확인을 선택했습니다.");
+                    } else {
+                        alert("취소를 선택했습니다.");
+                    }
+                }
+                </script>
+                <button onclick="showConfirm()">확인 대화상자 표시</button>
+        </xmp>
+        <hr>
+        <p>설명<br>
+            Confirm는 사용자에게 확인을 요구하는 메시지를 표시하고, 사용자가 확인 또는 취소를 선택할 수 있도록 합니다. <br>
+            이 코드는 버튼을 클릭하면 confirm 함수가 호출되어 확인 대화상자가 표시됩니다. <br>   
+            사용자가 확인을 선택하면 "확인을 선택했습니다." 메시지가, 취소를 선택하면 "취소를 선택했습니다." 메시지가 알림으로 표시됩니다.
+        </p>
+
+        <hr>
+
+        <h2>3. PROMPT 설명과 사용 예</h2>
+        <script>
+            function showPrompt() {
+                let name = prompt("이름을 입력해 주세요:", "홍길동");
+                if (name !== null) {
+                    alert("안녕하세요, " + name + "님!");
+                } else {
+                    alert("입력이 취소되었습니다.");
+                }
+            }
+        </script>
+        <button onclick="showPrompt()">프롬프트 표시</button>
+        <hr>
+        <xmp>
+            <script>
+                function showPrompt() {
+                    let name = prompt("이름을 입력해 주세요:", "홍길동");
+                    if (name !== null) {
+                        alert("안녕하세요, " + name + "님!");
+                    } else {
+                        alert("입력이 취소되었습니다.");
+                    }
+                }
+            </script>
+            <button onclick="showPrompt()">프롬프트 표시</button>
+        </xmp>
+        <hr>
+        <p>설명<br>
+            Prompt는 사용자에게 텍스트 입력을 요구하는 메시지를 표시하고, 사용자가 입력한 텍스트를 반환합니다. <br>
+            이 코드는 버튼을 클릭하면 prompt 함수가 호출되어 프롬프트 대화상자가 표시됩니다. <br>
+            사용자가 이름을 입력하고 확인을 누르면 "안녕하세요, [이름]님!" 메시지가 알림으로 표시됩니다. <br>
+            취소를 누르면 "입력이 취소되었습니다." 메시지가 알림으로 표시됩니다.
+        </p>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------->
+
+    <div class="bordered-pre">
+        <h1>Condition</h1>
+        <hr>
+        <h2>조건문 설명과 사용 예</h2>
+        <script>
+            function checkNumber() {
+                let number = parseInt(prompt("숫자를 입력해 주세요:"));
+                if (number > 0) {
+                    alert("입력한 숫자는 양수입니다.");
+                } else if (number < 0) {
+                    alert("입력한 숫자는 음수입니다.");
+                } else {
+                    alert("입력한 숫자는 0입니다.");
+                }
+            }
+        </script>
+        <button onclick="checkNumber()">숫자 확인</button>
+        <hr>
+        <xmp>
+            <script>
+                function checkNumber() {
+                    let number = parseInt(prompt("숫자를 입력해 주세요:"));
+                    if (number > 0) {
+                        alert("입력한 숫자는 양수입니다.");
+                    } else if (number < 0) {
+                        alert("입력한 숫자는 음수입니다.");
+                    } else {
+                        alert("입력한 숫자는 0입니다.");
+                    }
+                }
+            </script>
+            <button onclick="checkNumber()">숫자 확인</button>
+        </xmp>
+        <hr>
+        <p>설명<br>
+            조건문은 특정 조건에 따라 다른 동작을 수행하는 문장입니다. 여기서는 if 조건문을 예제로 사용하겠습니다. <br>
+            이 코드는 사용자가 숫자를 입력하면 그 숫자가 양수인지, 음수인지, 0인지 확인하는 if 조건문을 사용합니다. <br>
+            사용자가 입력한 숫자에 따라 다른 메시지가 알림으로 표시됩니다.
+        </p>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------->
+
+    <div class="bordered-pre">
+        <h1>Looping</h1>
+        <hr>
+        <h2>반복문 설명과 사용 예</h2>
+        <script>
+            function displayNumbers() {
+                let numbers = "";
+                for (let i = 1; i <= 10; i++) {
+                    numbers += i + " ";
+                }
+                alert("1부터 10까지의 숫자: " + numbers);
+            }
+        </script>
+        <button onclick="displayNumbers()">숫자 표시</button>
+        <hr>
+        <xmp>
+            <script>
+                function displayNumbers() {
+                    let numbers = "";
+                    for (let i = 1; i <= 10; i++) {
+                        numbers += i + " ";
+                    }
+                    alert("1부터 10까지의 숫자: " + numbers);
+                }
+            </script>
+            <button onclick="displayNumbers()">숫자 표시</button>
+        </xmp>
+        <hr>
+        <p>설명<br>
+            반복문은 특정 조건이 만족될 때까지 코드 블록을 반복 실행하는 문장입니다. 여기서는 for 반복문을 예제로 사용하겠습니다. <br>
+            이 코드는 for 반복문을 사용하여 1부터 10까지의 숫자를 문자열로 만들어 알림으로 표시합니다. <br>
+            for 반복문은 초기값(i = 1), 조건(i <= 10), 증감식(i++)으로 구성됩니다.
+    </div>
+
+    <!------------------------------------------------------------------------------------------------->
+    
+    <div class="bordered-pre">
+        <h1>DOM</h1>
+        <hr>
+        <h2>DOM 설명과 사용 예</h2>
+        <script>
+            function changeContent() {
+                document.getElementById("demo").innerHTML = "콘텐츠가 변경되었습니다!";
+            }
+        </script>
+        <p id="demo">여기를 클릭하세요!</p>
+        <button onclick="changeContent()">콘텐츠 변경</button>
+        <hr>
+        <xmp>
+            <script>
+                function changeContent() {
+                    document.getElementById("demo").innerHTML = "콘텐츠가 변경되었습니다!";
+                }
+            </script>
+            <p id="demo">여기를 클릭하세요!</p>
+            <button onclick="changeContent()">콘텐츠 변경</button>
+        </xmp>
+        <hr>
+        <p>설명<br>
+            **DOM(Document Object Model)**은 HTML 문서의 구조화된 표현을 제공하며, 프로그래밍 언어가 문서 구조, 스타일, 내용 등을 변경할 수 있게 합니다. <br>
+            이 코드는 버튼을 클릭하면 changeContent 함수가 호출되어, id가 "demo"인 요소의 내용을 "콘텐츠가 변경되었습니다!"로 변경합니다.
+        </p>
+    </div>
+
+    <div class="bordered-pre">
+        <h1>BOM</h1>
+        <hr>
+        <h2>BOM 설명과 사용 예</h2>
+        <script>
+            function showWindowSize() {
+                let width = window.innerWidth;
+                let height = window.innerHeight;
+                alert("브라우저 창 크기: " + width + " x " + height);
+            }
+        </script>
+        <button onclick="showWindowSize()">창 크기 표시</button>
+        <hr>
+        <xmp>
+            <script>
+                function showWindowSize() {
+                    let width = window.innerWidth;
+                    let height = window.innerHeight;
+                    alert("브라우저 창 크기: " + width + " x " + height);
+                }
+            </script>
+            <button onclick="showWindowSize()">창 크기 표시</button>
+        </xmp>
+        <hr>
+        <p>설명<br>
+            **BOM(Browser Object Model)**은 브라우저와 관련된 객체들을 제공하며, 자바스크립트를 통해 브라우저 창과 상호 작용할 수 있게 합니다. <br>
+            이 코드는 버튼을 클릭하면 showWindowSize 함수가 호출되어 현재 브라우저 창의 너비와 높이를 알림으로 표시합니다.
+        </p>
+    </div>
+    
+    <div class="bordered-pre">
+        <h1>EventListener</h1>
+        <hr>
+        <h2>EventListener 설명과 사용 예</h2>
+        <script>
+            function showAlert() {
+                alert("버튼이 클릭되었습니다!");
+            }
+    
+            window.onload = function() {
+                document.getElementById("myButton").addEventListener("click", showAlert);
+            };
+        </script>
+        <button id="myButton">클릭하세요!</button>
+        <hr>
+        <xmp>
+            <script>
+                function showAlert() {
+                    alert("버튼이 클릭되었습니다!");
+                }
+        
+                window.onload = function() {
+                    document.getElementById("myButton").addEventListener("click", showAlert);
+                };
+            </script>
+            <button id="myButton">클릭하세요!</button>
+        </xmp>
+        <hr>
+        <p>설명<br>
+            EventListener는 특정 이벤트가 발생할 때 호출되는 함수입니다. 이벤트는 사용자가 버튼을 클릭하거나 키를 누르는 등의 동작을 포함합니다. <br>
+            이 코드는 페이지가 로드되면 window.onload 이벤트에 의해 showAlert 함수를 "myButton" ID를 가진 버튼의 클릭 이벤트에 연결합니다. <br>
+            버튼을 클릭하면 알림이 표시됩니다.
+        </p>
+    </div>
+
+  </body>
+</html>

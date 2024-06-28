@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Header Part</title>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        /* 전체 헤더 영역 스타일 */
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        /* 왼쪽에 고정될 h3 스타일 */
+        .left-header {
+            margin: 0;
+            margin-right: auto;
+        }
+
+        /* 중앙에 위치할 버튼 컨테이너 */
+        .center-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* 버튼 간 간격 */
+            margin: auto;
+        }
+
+        /* 버튼 스타일 */
+        button {
+            position: relative;
+            background-color: rgb(230, 34, 77);
+            border-radius: 5px;
+            box-shadow: rgb(121, 18, 55) 0px 4px 0px 0px;
+            padding: 15px;
+            cursor: pointer;
+            box-sizing: border-box;
+            width: 140px;
+            height: 49px;
+            color: #fff;
+            border: none;
+            font-size: 20px;
+            transition: all 0.3s ease-in-out;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: "";
+            background-color: rgb(248, 50, 93);
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: width 700ms ease-in-out;
+            display: inline-block;
+        }
+
+        button:hover::before {
+            width: 100%;
+        }
+
+        /* 고정된 요소 스타일 */
+        #fixed {
+            position: absolute;
+            bottom: 50px;
+            right: 10px;
+            width: 200px;
+            padding: 1px;
+            background: red;
+            color: white;
+            border-radius: 0px 0px 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 전체 헤더 영역 -->
+    <div class="header-container">
+        <!-- 왼쪽에 위치할 h3 요소 -->
+        <a href="section.html" target="section" title="첫화면"><h3 class="left-header" style="border-left: 3px solid blue; padding-left: 5px;">심CITY의 오신 걸 환영합니다~</h3></a>
+        <!-- 중앙에 위치할 버튼들 -->
+        <div class="fixed">
+            <button><a href="left.html" target="left" title="To Home" style="text-decoration: none; color: #fff;">Home</a></button>
+            <button><a href="/MYWORKbox/left_mywork.html" target="left" title="html 학습 내용" style="text-decoration: none; color: #fff;">My Work</a></button>
+            <button><a href="/left_htmlbox/left_html.html" target="left" title="html 학습 내용" style="text-decoration: none; color: #fff;">HTML</a></button>
+            <button><a href="/left_cssbox/left_css.html" target="left" title="css 학습 내용" style="text-decoration: none; color: #fff;">CSS</a></button>
+            <button><a href="/left_jsbox/left_js.html" target="left" title="css 학습 내용" style="text-decoration: none; color: #fff;">JS</a></button>
+            <button><a href="http://newbongman.dothome.co.kr/" target="_blank" style="text-decoration : none; color: #ffffff;">교수님 SITE</a></button>
+        </div>
+    </div>
+</body>
+</html>

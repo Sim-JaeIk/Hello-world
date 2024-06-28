@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong 게임</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #gameArea {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 2px solid #fff;
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        #ball {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        #paddle {
+            position: absolute;
+            width: 100px;
+            height: 20px;
+            background-color: #fff;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <h2>Pong 게임&nbsp;&nbsp;&nbsp;</h2>
+    <div id="gameArea">
+        <div id="ball"></div>
+        <div id="paddle"></div>
+    </div>
+    <script>
+        const ball = document.getElementById("ball");
+        const paddle = document.getElementById("paddle");
+        const gameArea = document.getElementById("gameArea");
+
+        let ballX, ballY, ballSpeedX, ballSpeedY, paddleX;
+        const paddleSpeed = 20;
+
+        function initGame() {
+            ballX = gameArea.clientWidth / 2;
+            ballY = gameArea.clientHeight / 2;
+            ballSpeedX = 2;
+            ballSpeedY = 2;
+            paddleX = gameArea.clientWidth / 2 - paddle.clientWidth / 2;
+            ball.style.left = ballX + "px";
+            ball.style.top = ballY + "px";
+            paddle.style.left = paddleX + "px";
+            requestAnimationFrame(update);
+        }
+
+        function update() {
+            // Ball movement
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+
+            // Ball collision with walls
+            if (ballX <= 0 || ballX >= gameArea.clientWidth - ball.clientWidth) {
+                ballSpeedX *= -1;
+            }
+            if (ballY <= 0) {
+                ballSpeedY *= -1;
+            }
+
+            // Ball collision with paddle
+            if (ballY + ball.clientHeight >= gameArea.clientHeight - paddle.clientHeight) {
+                if (ballX + ball.clientWidth >= paddleX && ballX <= paddleX + paddle.clientWidth) {
+                    // Reflect ball and adjust speed based on where the ball hits the paddle
+                    ballSpeedY *= -1;
+                    let paddleCenter = paddleX + paddle.clientWidth / 2;
+                    let ballCenter = ballX + ball.clientWidth / 2;
+                    let offset = ballCenter - paddleCenter;
+                    ballSpeedX = (offset / (paddle.clientWidth / 2)) * 5;
+                }
+            }
+
+            // Ball out of bounds
+            if (ballY > gameArea.clientHeight) {
+                alert("Game Over");
+                initGame();
+                return;
+            }
+
+            // Update ball position
+            ball.style.left = ballX + "px";
+            ball.style.top = ballY + "px";
+
+            // Update paddle position
+            paddle.style.left = paddleX + "px";
+
+            requestAnimationFrame(update);
+        }
+
+        function movePaddle(event) {
+            const rect = gameArea.getBoundingClientRect();
+            paddleX = event.clientX - rect.left - paddle.clientWidth / 2;
+            if (paddleX < 0) {
+                paddleX = 0;
+            } else if (paddleX > gameArea.clientWidth - paddle.clientWidth) {
+                paddleX = gameArea.clientWidth - paddle.clientWidth;
+            }
+        }
+
+        gameArea.addEventListener("mousemove", movePaddle);
+        initGame();
+    </script>
+</body>
+</html>

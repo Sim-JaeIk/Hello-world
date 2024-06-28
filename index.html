@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SimJaeik.html</title>
+    <link rel="icon" href="vv.png" type="image/x-icon">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container {
+            display: flex; /* Flexbox를 사용하여 내부 아이템들을 가로로 배열합니다 */
+            height: 80%; /* 전체 높이의 80%를 사용 */
+        }
+        .header {
+            width: 100%;
+            background: lightblue;
+            height: 90px;
+        }
+        .footer {
+            background: plum;
+            height: 100px;
+        }
+        .nav {
+            flex: 1; /* Flex 아이템이 차지할 수 있는 공간의 비율을 설정 */
+            background: orange;
+        }
+        .aside {
+            flex: 1; /* 같은 비율 */
+            background: skyblue;
+        }
+        .section {
+            flex: 4; /* 다른 아이템들보다 크게 설정 */
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <iframe src="header.html" name="header" height="100%" width="100%"></iframe>
+    </header>
+    <div class="container">
+        <nav class="nav">
+            <iframe src="left.html" name="left" height="100%" width="100%"></iframe>
+        </nav>
+        <section class="section">
+            <iframe src="section.html" name="section" height="100%" width="100%"></iframe>
+        </section>
+        <aside class="aside">
+            <iframe src="right.html" name="right" height="100%" width="100%"></iframe>
+        </aside>
+    </div>
+    <footer class="footer">
+        <iframe src="footer.html" name="footer" height="100%" width="100%"></iframe>
+    </footer>
+</body>
+</html>

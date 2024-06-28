@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구구단만들기</title>
+    <style>
+      .container {
+        width: 100%;
+        height: 100%;
+        --color: #e1e1e1;
+        background-color: #f3f3f3;
+        background-image: linear-gradient(
+            0deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          ),
+          linear-gradient(
+            90deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          );
+        background-size: 55px 55px;
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+      }
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .bordered-pre {
+        border: 2px solid #4caf50; /* 테두리 색상을 녹색으로 설정 */
+        padding: 10px; /* 내부 여백을 추가하여 텍스트와 테두리 사이 간격을 조정 */
+        margin: 20px; /* 외부 여백을 추가하여 다른 요소들과의 간격을 조정 */
+        overflow: auto; /* 내용이 넘치면 스크롤바를 표시 */
+        background-color: #e6dddd; /* 배경색 설정 */
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+        width: 1150px;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <h1>&nbsp;&nbsp;&nbsp; 구구단</h1>
+    <hr />
+    <div class="bordered-pre">
+      <p style="font-size: 30px; color: #4caf50">
+        구구단(1~9) - 가로(+표형식) 버전1
+      </p>
+      <script>
+        document.write("<table border = 1px, width = 1200px>");
+        for (var M = 1; M <= 9; M++) {
+          document.write("<tr align=center>");
+          for (var N = 1; N <= 9; N++) {
+            document.write("<td width = 500px>");
+            document.write(M + " x " + N + " = " + M * N + "<br>");
+            document.write("</td>");
+          }
+          document.write("</tr>");
+        }
+        document.write("</table>");
+      </script>
+
+      <hr />
+      <h3>Java Script Code</h3>
+      <xmp>
+            <hr>
+            <script>
+                document.write("<table border = 1px, width = 1200px>");
+                    for(var M = 1; M <= 9; M++){
+                            document.write("<tr align=center>");
+                        for(var N = 1; N <= 9; N++){
+                            document.write("<td width = 500px>"); 
+                            document.write(M + " x " + N + " = " + (M*N) + "<br>");
+                            document.write("</td>");
+                        }
+                        document.write("</tr>");
+                    }
+                document.write("</table>");
+            </script>        
+        </xmp>
+    </div>
+
+    <hr />
+    <!-------------------------------------------------------------------------------------------------------->
+    <div class="bordered-pre">
+      <p style="font-size: 30px; color: #4caf50">
+        구구단(1~9) - 세로(+표형식) 버전2
+      </p>
+      <script>
+        document.write("<table border = 1px, width = 1200px>");
+        for (var M = 1; M <= 9; M++) {
+          document.write("<tr align=center>");
+          for (var N = 1; N <= 9; N++) {
+            document.write("<td width = 500px>");
+            document.write(N + " x " + M + " = " + M * N + "<br>");
+            document.write("</td>");
+          }
+          document.write("</tr>");
+        }
+        document.write("</table>");
+      </script>
+      <hr />
+      <h3>Java Script Code</h3>
+      <xmp>
+            <hr>
+            <script>
+                document.write("<table border = 1px, width = 1200px>");
+                    for(var M = 1; M <= 9; M++){
+                            document.write("<tr align=center>");
+                        for(var N = 1; N <= 9; N++){
+                            document.write("<td width = 500px>"); 
+                            document.write(N + " x " + M + " = " + (M*N) + "<br>");
+                            document.write("</td>");
+                        }
+                        document.write("</tr>");
+                    }
+                document.write("</table>");
+            </script>
+        </xmp>
+    </div>
+    <hr>
+    <!-------------------------------------------------------------------------------------------------------->
+    <div class="bordered-pre">
+      <p style="font-size: 30px; color: #4caf50">구구단(1~9) - 3행3열 버전1</p>
+      <script>
+        document.write(
+          '<table class="gugudan" width="400px" style="text-align: center;">'
+        );
+        for (var I = 1; I <= 3; I++) {
+          if (I > 1) {
+            document.write('<tr class="space"><td colspan="3"></td></tr>');
+          }
+          for (var M = 1; M <= 9; M++) {
+            document.write("<tr>");
+            for (var N = 1; N <= 3; N++) {
+              var num = 3 * (I - 1) + N;
+              document.write("<td>");
+              document.write(num + " x " + M + " = " + num * M + "<br>");
+              document.write("</td>");
+            }
+            document.write("</tr>");
+          }
+        }
+        document.write("</table>");
+      </script>
+
+      <hr />
+      <h3>Java Script Code</h3>
+      <xmp>
+                <hr>
+                <script>
+                    document.write('<table class="gugudan" width="400px" style="text-align: center;">');
+                    for (var I = 1; I <= 3; I++) {
+                        if (I > 1) {
+                            document.write('<tr class="space"><td colspan="3"></td></tr>');
+                        }
+                        for (var M = 1; M <= 9; M++) {
+                            document.write('<tr>');
+                            for (var N = 1; N <= 3; N++) {
+                                var num = 3 * (I - 1) + N;
+                                document.write('<td>');
+                                document.write(num + " x " + M + " = " + num * M + "<br>");
+                                document.write('</td>');
+                            }
+                            document.write('</tr>');
+                        }
+                    }
+                    document.write('</table>');
+                </script>
+            </xmp>
+    </div>
+    <hr>
+    <!-------------------------------------------------------------------------------------------------------->
+    <div class="bordered-pre">
+      <p style="font-size: 30px; color: #4caf50">구구단(1~9) - 3행3열 버전2</p>
+      <script>
+        document.write(
+          '<table class="gugudan" width="400px" style="text-align: center;">'
+        );
+        for (var M = 1; M <= 3; M++) {
+          if (M > 1) {
+            document.write('<tr class="spacer"><td colspan="3"></td></tr>');
+          }
+          for (var I = 0; I < 3; I++) {
+            var num = M + I * 3;
+            document.write("<td>");
+            for (var J = 1; J <= 9; J++) {
+              document.write(num + " x " + J + " = " + num * J + "<br>");
+            }
+            document.write("</td>");
+          }
+          document.write("</tr>");
+        }
+        document.write("</table>");
+      </script>
+      <hr />
+      <h3>Java Script Code</h3>
+      <xmp>
+                        <hr>
+                        <script>
+                            document.write('<table class="gugudan" width="400px" style="text-align: center;">');
+                            for (var M = 1; M <= 3; M++) {
+                                if (M > 1) {
+                                    document.write('<tr class="spacer"><td colspan="3"></td></tr>');
+                                }
+                                for (var I = 0; I < 3; I++) {
+                                    var num = M + I * 3;
+                                    document.write('<td>');
+                                    for (var J = 1; J <= 9; J++) {
+                                        document.write(num + " x " + J + " = " + num * J + "<br>");
+                                }
+                                document.write('</td>');
+                            }
+                            document.write('</tr>');
+                        }
+                        document.write('</table>');
+                    </script>
+                
+                    </xmp>
+    </div>
+  </body>
+</html>

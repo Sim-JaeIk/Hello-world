@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구구단만들기</title>
+    <style>
+      .container {
+        width: 100%;
+        height: 100%;
+        --color: #e1e1e1;
+        background-color: #f3f3f3;
+        background-image: linear-gradient(
+            0deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          ),
+          linear-gradient(
+            90deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          );
+        background-size: 55px 55px;
+      }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+      }
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .bordered-pre {
+        border: 2px solid #4caf50; /* 테두리 색상을 녹색으로 설정 */
+        padding: 10px; /* 내부 여백을 추가하여 텍스트와 테두리 사이 간격을 조정 */
+        margin: 20px; /* 외부 여백을 추가하여 다른 요소들과의 간격을 조정 */
+        overflow: auto; /* 내용이 넘치면 스크롤바를 표시 */
+        background-color: #e6dddd; /* 배경색 설정 */
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+        width: 1150px;
+      }
+      .gugudan td {
+        border: 1px solid #000; /* 각 단마다 테두리 추가 */
+        padding: 10px;
+        background-color: #fff; /* 배경색 추가 */
+      }
+    </style>
+  </head>
+  <body class="container">
+    <div class="bordered-pre">
+      <p style="font-size: 30px; color: #4caf50">구구단기말문제</p>
+      <img src="ggdpic.png" alt="구구단문제" width="900" height="330" style="margin-left: 30px;">
+      <p style="font-size: 30px;">심재익(<span style="color: darkblue;">2020E7025</span>)/3 = 2</p>
+      <hr>
+      <script>
+        document.write(
+          '<table class="gugudan" width="400px" style="text-align: center;">'
+        );
+        var order = [9, 6, 3, 8, 5, 2, 7, 4, 1];
+        for (var row = 0; row < 3; row++) {
+          if (row > 0) {
+            document.write('<tr class="spacer"><td colspan="3"></td></tr>');
+          }
+          document.write("<tr>");
+          for (var col = 0; col < 3; col++) {
+            var num = order[row * 3 + col];
+            document.write("<td>");
+            for (var i = 1; i <= 9; i++) {
+              document.write(num + " x " + i + " = " + num * i + "<br>");
+            }
+            document.write("</td>");
+          }
+          document.write("</tr>");
+        }
+        document.write("</table>");
+      </script>
+      <hr />
+      <h3>Java Script Code</h3>
+      <xmp>
+        <hr>
+        <script>
+          document.write('<table class="gugudan" width="400px" style="text-align: center;">');
+          var order = [9, 6, 3, 8, 5, 2, 7, 4, 1];
+          for (var row = 0; row < 3; row++) {
+            if (row > 0) {
+              document.write('<tr class="spacer"><td colspan="3"></td></tr>');
+            }
+            document.write('<tr>');
+            for (var col = 0; col < 3; col++) {
+              var num = order[row * 3 + col];
+              document.write('<td>');
+              for (var i = 1; i <= 9; i++) {
+                document.write(num + ' x ' + i + ' = ' + num * i + '<br>');
+              }
+              document.write('</td>');
+            }
+            document.write('</tr>');
+          }
+          document.write('</table>');
+        </script>
+      </xmp>
+    </div>
+  </body>
+</html>

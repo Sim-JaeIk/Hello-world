@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그림그리기</title>
+    <style>
+      .container {
+        width: 100%;
+        height: 100%;
+        --color: #e1e1e1;
+        background-color: #f3f3f3;
+        background-image: linear-gradient(
+            0deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          ),
+          linear-gradient(
+            90deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          );
+        background-size: 55px 55px;
+      }
+      canvas {
+        margin-left: 30px;
+        border: 3px solid rgb(5, 97, 182);
+    }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+      }
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .bordered-pre {
+        border: 2px solid #4caf50; /* 테두리 색상을 녹색으로 설정 */
+        padding: 10px; /* 내부 여백을 추가하여 텍스트와 테두리 사이 간격을 조정 */
+        margin: 20px; /* 외부 여백을 추가하여 다른 요소들과의 간격을 조정 */
+        overflow: auto; /* 내용이 넘치면 스크롤바를 표시 */
+        background-color: #e6dddd; /* 배경색 설정 */
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+        width: 1150px;
+      }
+    </style>
+  </head>
+  <body class="container" onload="init()">
+    <h3>&nbsp;&nbsp;&nbsp; 마우스를 누른 채 드래깅하여 그림 그려 보세요</h3>
+    <hr>
+    
+    <button id="color_1" onclick="color_1()" style="width:20px; height:20px; padding:2px; background-color:red; margin-left: 30px;"></button>
+    <button id="color_2" onclick="color_2()" style="width:20px; height:20px; padding:2px; background-color:yellow"></button>
+    <button id="color_3" onclick="color_3()" style="width:20px; height:20px; padding:2px; background-color:yellowgreen"></button>
+    <button id="color_4" onclick="color_4()" style="width:20px; height:20px; padding:2px; background-color:skyblue"></button>
+    <button id="color_5" onclick="color_5()" style="width:20px; height:20px; padding:2px; background-color:palevioletred"></button>
+    <button id="line_1" onclick="line_1()" style="width:50px; height:25px; padding:2px; background-color:white">두껍게</button>
+    <button id="line_2" onclick="line_2()" style="width:50px; height:25px; padding:2px; background-color:white">가늘게</button>
+    <button id="clear" onclick="clearCanvas()" style="width:50px; height:25px; padding:2px; background-color:white">지우기</button>
+    <hr>
+    
+    <canvas id="myCanvas" style="background-color:aliceblue" width="400" height="300"></canvas>
+    
+    <script>
+        var canvas, context;
+        function init() {
+            canvas = document.getElementById("myCanvas");
+            context = canvas.getContext("2d");
+    
+            context.lineWidth = 2; // 선 굵기 2
+            context.strokeStyle = "blue";
+    
+            canvas.addEventListener("mousemove", function (e) { move(e) }, false);
+            canvas.addEventListener("mousedown", function (e) { down(e) }, false);
+            canvas.addEventListener("mouseup", function (e) { up(e) }, false);
+            canvas.addEventListener("mouseout", function (e) { out(e) }, false);
+        }
+    
+        var startX = 0, startY = 0; // 드래깅동안, 처음 마우스가 눌러진 좌표
+        var dragging = false;
+        function draw(curX, curY) {
+            context.beginPath();
+            context.moveTo(startX, startY); // 처음 마우스를 클릭한 곳
+            context.lineTo(curX, curY); // 마우스가 이동한 곳
+            context.stroke();
+        }
+        function down(e) { // 마우스를 클릭한 때
+            startX = e.offsetX; startY = e.offsetY; dragging = true;
+        }
+    
+        function up(e) { dragging = false; }
+    
+        function move(e) { // 마우스를 이동한 때
+            if (!dragging) return; // 마우스가 눌러지지 않았으면 리턴
+            var curX = e.offsetX, curY = e.offsetY;
+            draw(curX, curY);
+            startX = curX; startY = curY;
+        }
+    
+        function out(e) { dragging = false; }
+    
+        function color_1() { context.strokeStyle = "red"; }
+        function color_2() { context.strokeStyle = "yellow"; }
+        function color_3() { context.strokeStyle = "yellowgreen"; }
+        function color_4() { context.strokeStyle = "skyblue"; }
+        function color_5() { context.strokeStyle = "palevioletred"; }
+        function line_1() { context.lineWidth++; }
+        function line_2() { context.lineWidth--; }
+        
+        function clearCanvas() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    
+        window.onload = init;
+    </script>
+    
+    
+    <hr>
+    <!-------------------------------------------------------------------------------------------------------->
+    <canvas id="myCanvas2" style="background-color:aliceblue;" width="700" height="300"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas2");
+        var context = canvas.getContext("2d");
+        
+        // 텍스트 외곽선만 그리기
+        context.font = "50px arial";
+        context.strokeStyle = "red";
+        context.lineWidth = 2;
+        context.textAlign = "left";
+        context.strokeText("simji0319@Naver.Com", 10, 50);
+
+        // " ㅁ "
+        context.beginPath();
+        context.strokeStyle = "blue"; 
+	    context.rect(100, 200, 50, 50); 
+        context.lineWidth=26;
+	    context.stroke();
+
+        // "\"
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(100, 120); // (120, 20)을 시작점으로 설정
+	    context.lineTo(140, 180); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=10;
+        context.strokeStyle="magenta"; 
+        context.stroke();
+
+        // "/"
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(100, 120); // (120, 20)을 시작점으로 설정
+	    context.lineTo(70, 180); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=10;
+        context.strokeStyle="yellow"; 
+        context.stroke();
+
+        // "|"
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(160, 120); // (120, 20)을 시작점으로 설정
+	    context.lineTo(160, 180); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=10;
+        context.strokeStyle="darkred"; 
+        context.stroke();
+
+        // "ㅡ"
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(210, 130); // (120, 20)을 시작점으로 설정
+	    context.lineTo(340, 130); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=30;
+        context.strokeStyle="orange"; 
+        context.stroke();
+
+        // "/"
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(270, 140); // (120, 20)을 시작점으로 설정
+	    context.lineTo(230, 240); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=10;
+        context.strokeStyle="magenta"; 
+        context.stroke();
+
+        // "\"
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(270, 140); // (120, 20)을 시작점으로 설정
+	    context.lineTo(300, 240); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=10;
+        context.strokeStyle="darkblue"; 
+        context.stroke();
+
+        // "ㅐ"
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(370, 120); // (120, 20)을 시작점으로 설정
+	    context.lineTo(370, 280); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=15;
+        context.strokeStyle="green"; 
+        context.stroke();
+
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(370, 200); // (120, 20)을 시작점으로 설정
+	    context.lineTo(410, 200); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=15;
+        context.strokeStyle="red"; 
+        context.stroke();
+
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(410, 100); // (120, 20)을 시작점으로 설정
+	    context.lineTo(410, 230); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=15;
+        context.strokeStyle="burlywood"; 
+        context.stroke();
+
+        // "O"
+        context.beginPath(); // 빈 경로 구성
+	    context.strokeStyle="darkblue";	
+	    context.arc(500, 140, 30, 0, 1.5*Math.PI, false); // 시계 방향
+	    context.stroke(); // 경로에 있는 원호를 그린다
+
+	    context.beginPath(); // 이전 경로 지우고 빈 경로 구성                  
+	    context.strokeStyle="crimson";
+	    context.arc(500, 140, 50, Math.PI/2, Math.PI, true); // 시계 방향
+	    context.stroke(); // 경로에 있는 한 개의 원호를 캔버스에 그린다
+        
+
+        // "|"
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(590, 100); // (120, 20)을 시작점으로 설정
+	    context.lineTo(590, 190); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=40;
+        context.strokeStyle="gold"; 
+        context.stroke();
+        
+        // "ㄱ"
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(480, 210); // (120, 20)을 시작점으로 설정
+	    context.lineTo(590, 210); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=18;
+        context.strokeStyle="salmon"; 
+        context.stroke();
+
+        context.beginPath(); // 빈 경로 만들기
+	    context.moveTo(590, 200); // (120, 20)을 시작점으로 설정
+	    context.lineTo(590, 270); // 경로에 (120, 20)에서 (20, 50)까지 직선 추가
+        context.lineWidth=20;
+        context.strokeStyle="aquamarine"; 
+        context.stroke();
+    </script>
+</body>
+</html>

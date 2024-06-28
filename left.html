@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Calendar</title>
+    <style>
+      /* CSS 스타일 */
+      #calendar {
+        width: 300px;
+        margin: auto;
+        border: 1px solid #ffffff;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      .header {
+        background-color: #fa9d46;
+        padding: 10px;
+        border-bottom: 1px solid #ffffff; /* 하단 경계선 추가 */
+      }
+
+      .days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        background-color: #f5a958;
+        padding: 5px 0;
+        border-top: 1px solid #ffffff; /* 상단 경계선 추가 */
+        border-bottom: 1px solid rgb(255, 255, 255); /* 하단 경계선 추가 */
+      }
+
+      .day {
+        box-sizing: border-box;
+        padding: 5px 0;
+        border-right: 1px solid #ffffff;
+      }
+
+      .date-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+      }
+
+      .date-grid div {
+        box-sizing: border-box;
+        padding: 10px 0;
+        border: 1px solid #ffffff;
+      }
+
+      .icon-text {
+        display: inline-flex;
+        align-items: center; /* 수평 정렬 */
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #d8274d;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .icon {
+        width: 20px; /* 아이콘 너비 */
+        height: 20px; /* 아이콘 높이 */
+        margin-right: 8px; /* 텍스트와 아이콘 사이 간격 */
+      }
+
+      .text {
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HTML 구조 -->
+    <div id="calendar"></div>
+    <hr />
+    <p align="middle">
+      <iframe
+        scrolling="no"
+        frameborder="no"
+        clocktype="html5"
+        style="
+          overflow: hidden;
+          border: 0;
+          margin: 0;
+          padding: 0;
+          width: 227px;
+          height: 75px;
+        "
+        src="https://www.clocklink.com/html5embed.php?clock=008&timezone=KoreaRepublicof_Seoul&color=orange&size=227&Title=&Message=&Target=&From=2024,1,1,0,0,0&Color=orange"
+      ></iframe>
+    </p>
+    <hr />
+    <p>
+      <a
+        href="https://blog.naver.com/simji0319"
+        target="_blank"
+        style="text-decoration: none; color: #ffffff"
+        >😑 재익이의 Naver Blog</a
+      >
+    </p>
+    <p>
+      <a
+        href="https://simji0319.tistory.com/"
+        target="_blank"
+        style="text-decoration: none; color: #ffffff"
+        >🫤 재익이의 Tistory</a
+      >
+    </p>
+    <p>
+      <a
+        href="https://github.com/Sim-JaeIk?tab=projects"
+        target="_blank"
+        style="text-decoration: none; color: #ffffff"
+        >😐 심재익의 Github</a
+      >
+    </p>
+    <hr />
+
+    <p class="icon-text">
+      <img src="/mainpic/insta.png" alt="insta" width="14px" height="14px"" class="icon">
+      <a href="https://www.instagram.com/sim_jaeik/" target="_blank" style="text-decoration: none; color: #ffffff;"><span class="text">Instagram</span></a>
+    </p>
+    <p class="icon-text">
+      <img src="/mainpic/xlogo.avif" alt="twitter" width="14px" height="14px"" class="icon">
+      <a href="https://twitter.com/simji0319" target="_blank" style="text-decoration: none; color: #ffffff;"><span class="text">Twitter</span></a>
+    </p>
+
+    <script>
+      // JavaScript 코드
+      document.addEventListener("DOMContentLoaded", function () {
+        function createCalendar(year, month) {
+          const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+          const monthDays = new Date(year, month + 1, 0).getDate();
+          const firstDay = new Date(year, month, 1).getDay();
+
+          const calendarDiv = document.getElementById("calendar");
+          calendarDiv.innerHTML = "";
+
+          // Header with month and year
+          const header = document.createElement("div");
+          header.className = "header";
+          header.innerHTML = `${year}-${month + 1}`;
+          calendarDiv.appendChild(header);
+
+          // Days of the week
+          const daysDiv = document.createElement("div");
+          daysDiv.className = "days";
+          daysOfWeek.forEach((day) => {
+            const dayDiv = document.createElement("div");
+            dayDiv.className = "day";
+            dayDiv.innerText = day;
+            daysDiv.appendChild(dayDiv);
+          });
+          calendarDiv.appendChild(daysDiv);
+
+          // Date grid
+          const dateGrid = document.createElement("div");
+          dateGrid.className = "date-grid";
+
+          // Fill in empty days at the start
+          for (let i = 0; i < firstDay; i++) {
+            const emptyDiv = document.createElement("div");
+            dateGrid.appendChild(emptyDiv);
+          }
+
+          // Fill in days of the month
+          for (let date = 1; date <= monthDays; date++) {
+            const dateDiv = document.createElement("div");
+            dateDiv.innerText = date;
+            dateGrid.appendChild(dateDiv);
+          }
+
+          calendarDiv.appendChild(dateGrid);
+        }
+
+        // Example usage: Current month
+        const today = new Date();
+        createCalendar(today.getFullYear(), today.getMonth());
+      });
+    </script>
+  </body>
+</html>

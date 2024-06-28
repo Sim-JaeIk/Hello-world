@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Footer</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background: url("/mainpic/wksel.png") no-repeat center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .worm {
+            position: absolute;
+            bottom: 10px;
+            height: 20px;
+            width: 500px;
+            background: linear-gradient(90deg, #8B4513 0%, rgb(230, 182, 131) 80%, #8B4513 80%);
+            border-radius: 50px / 10px;
+            animation: wiggleMove 4s linear infinite;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 15px;
+        }
+
+        .eyes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .eye {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 2px 0;
+            border: 1px solid black;
+        }
+
+        @keyframes wiggleMove {
+            0% {left: -500px; /* Start off-screen left */
+                transform: rotate(0deg);}
+            25% {transform: translateX(100px) rotate(-1deg);}
+            50% {transform: translateX(200px) rotate(1deg);}
+            75% {transform: translateX(300px) rotate(-0.5deg);}
+            100% {
+                left: 100%; /* Move across to off-screen right */
+                transform: rotate(0deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="worm">
+        <div class="eyes">
+            <div class="eye"></div> <!-- 첫 번째 눈 -->
+            <div class="eye"></div> <!-- 두 번째 눈 -->
+        </div>
+    </div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>workwork</title>
+        <style>
+        .container {
+        width: 100%;
+        height: 100%;
+        --color: #e1e1e1;
+        background-color: #f3f3f3;
+        background-image: linear-gradient(
+            0deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+        ),
+        linear-gradient(
+            90deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+        );
+        background-size: 55px 55px;
+    }
+    .bordered-pre {
+        border: 2px solid #4caf50; /* 테두리 색상을 녹색으로 설정 */
+        padding: 10px; /* 내부 여백을 추가하여 텍스트와 테두리 사이 간격을 조정 */
+        margin: 20px; /* 외부 여백을 추가하여 다른 요소들과의 간격을 조정 */
+        overflow: auto; /* 내용이 넘치면 스크롤바를 표시 */
+        background-color: #e6dddd; /* 배경색 설정 */
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+        width: 1150px;
+    }
+    </style>
+</head>
+<body class="container">
+    <table border="5" style="text-align:center; background-color: blanchedalmond; border-style: dotted;">
+        <caption style="font-size: 50px; background-color: antiquewhite;">&lt 컴퓨터공학과 심재익 시간표 &gt </caption>
+            <thead>
+                <tr style="background-color: darkgray;"><th style="width: 50px; height: 45px;">Class</th><th style="color: red; width: 150px;">Monday</span></th><th style="color: orange; width: 150px;">Tuesday</th><th style="color: darkkhaki; width: 150px;">Wedensday</th><th style="color: darkgreen; width: 150px;">Thursday</th><th style="color: darkcyan; width: 150px;">Friday</th><th style="color: blueviolet; width: 150px;">Saturday</th></tr>
+            </thead>
+                <tbody>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">2</td><td></td><td></td><td></td><td></td><td rowspan="2" style="background-color: skyblue;">프로그래밍언어구성론</td><td></td></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">3</td><td style="background-color: green; border: 5px;">운영체제</td><td></td><td></td><th></th><td></td></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">4</td><td></td><td rowspan="3" style="background-color: yellowgreen">아리인성교육1</td><td></td><td></td><td></td><td></td></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">5</td><td></th><td></td><td></td><td></td><td></td></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">6</td><td></td><th></th><td style="background-color: palevioletred;">데이터구조응용</td><td></td><td></td></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">7</td><td style="background-color: salmon;">전공세미나</td><td></td><td rowspan="3" style="background-color: burlywood">자바프로그래밍</td><td></td><td></td><th rowspan="2" style="background-color: slateblue;">데이터베이스</th></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">8</td><td rowspan="2" style="background-color: palevioletred;">데이터구조응용</td><td style="background-color: slateblue;">데이터베이스</td><td></td><td></td></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">9</td><td></th><td></td><td></td><td rowspan="2" style="background-color: green;">운영체제</td></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">10</td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr style="height: 40px;"><td style="background-color: darkcyan;">11</td><td></th><td></td><td></td><td></td><td></td><td style="background-color: skyblue;">프로그래밍언어구성론</td></tr>
+                </tbody>
+            <tfoot>
+                <tr style="background-color: darkgray;"><td>num</td><td>3개</td><td>2개</td><td>2개</td><td>0개</td><td>1개</td><td>3개</td></tr>
+                <tr><td colspan="7"><a href="https://everytime.kr/timetable">심재익 시간표 사이트</a></td></tr>
+            </tfoot>
+    </table>
+    <pre><code>
+        <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>코드 예시를 웹 페이지에 표시</title>
+    <style>
+      pre {
+        white-space: pre-wrap; /* 줄바꿈 유지 */
+      }
+    </style>
+  </head>
+  <body>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;실행코드</h3>
+    <pre class="bordered-pre">
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;en&quot;&gt;
+        &lt;head&gt;
+          &lt;meta charset=&quot;UTF-8&quot;&gt;
+          &lt;title&gt;Document&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;table border=&quot;5&quot; style=&quot;text-align:center; background-color: blanchedalmond; border-style: dotted;&quot;&gt;
+            &lt;caption style=&quot;font-size: 50px; background-color: antiquewhite;&quot;&gt;&amp;lt 컴퓨터공학과 심재익 시간표 &amp;gt &lt;/caption&gt;
+              &lt;thead&gt;
+                &lt;tr style=&quot;background-color: darkgray;&quot;&gt;&lt;th style=&quot;width: 50px; height: 45px;&quot;&gt;Class&lt;/th&gt;&lt;th style=&quot;color: red; width: 150px;&quot;&gt;Monday&lt;/th&gt;&lt;th style=&quot;color: orange; width: 150px;&quot;&gt;Tuesday&lt;/th&gt;&lt;th style=&quot;color: darkkhaki; width: 150px;&quot;&gt;Wedensday&lt;/th&gt;&lt;th style=&quot;color: darkgreen; width: 150px;&quot;&gt;Thursday&lt;/th&gt;&lt;th style=&quot;color: darkcyan; width: 150px;&quot;&gt;Friday&lt;/th&gt;&lt;th style=&quot;color: blueviolet; width: 150px;&quot;&gt;Saturday&lt;/th&gt;&lt;/tr&gt;
+              &lt;/thead&gt;
+              &lt;tbody&gt;
+                &lt;tr style=&quot;height: 40px;&quot;&gt;&lt;td style=&quot;background-color: darkcyan;&quot;&gt;1&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr style=&quot;height: 40px;&quot;&gt;&lt;td style=&quot;background-color: darkcyan;&quot;&gt;2&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td rowspan=&quot;2&quot; style=&quot;background-color: skyblue;&quot;&gt;프로그래밍언어구성론&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr style=&quot;height: 40px;&quot;&gt;&lt;td style=&quot;background-color: darkcyan;&quot;&gt;3&lt;/td&gt;&lt;td style=&quot;background-color: green; border: 5px;&quot;&gt;운영체제&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/td&gt;&lt;th&gt;&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+                &lt;tr style=&quot;height: 40px;&quot;&gt;&lt;td style=&quot;background-color: darkcyan;&quot;&gt;4&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td rowspan=&quot;3&quot; style=&quot;background-color: yellowgreen&quot;&gt;아리인성교육1&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/th&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+              &lt;/tbody&gt;
+          &lt;/table&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;
+    </pre>
+  </body>
+</html>
+    </code></pre>
+    <!-- ------------------------------------------------------------------------------------------------- -->
+    <hr>
+    <br><br>
+          <h1>2020E7025_심재익</h1>
+          <table border="2" style="width: 500; height: 700;">
+              <caption>회원가입</caption>
+              <tbody>
+              <form>
+                  <tr>
+                      <td style="text-align: center;">사용자 ID  </td><td><input type="text" size="20" value="" /></td><td><input type="button" value="확인" /></td>
+                  </tr>
+                  <tr>
+                      <td style="text-align: center;">비밀 번호  </td><td><input type="password" size="20" value="" /></td><td><input type="button" value="확인" /></td>
+                  </tr>
+                  <tr>
+                      <td style="text-align: center;">이메일  </td><td><input type="text" size="20" value="" /></td><td><input type="button" value="확인" /></td>
+                  </tr>
+                  <tr>
+                      <td style="text-align: center;">사용자(이름)  </td><td><input type="text" size="20" value="" /></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2" style="text-align: center;"><input type="radio" name="gender" value="1" checked />남자
+                          <input type="radio" name="gender" value="2" />여자
+                          <input type="radio" name="gender" value="3" />선택안함 </td>
+                  </tr>
+                  <tr>
+                      <td style="text-align: center;">생년월일</td><td><input type="text" size="20" value="" /></td>
+                  </tr>
+                  <tr>
+                      <td style="text-align: center;">국적</td><td><input type="text" list="what" />
+                          <datalist id="what">
+                              <option value="Korea"></option>
+                              <option value="China"></option>
+                              <option value="Japan"></option>
+                              <option value="German"></option>
+                              <option value="Poland"></option>
+                              </datalist>
+                          </td>
+                  </tr>
+                  <tr>
+                      <td style="text-align: center;">전화번호  </td><td><input type="text" size="20" value="" /></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><input type="text" id="sample4_postcode" size="20" placeholder="우편번호"><input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"></td></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><input type="text" id="sample4_roadAddress" size="33" placeholder="도로명주소"></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><input type="text" id="sample4_jibunAddress" size="33" placeholder="지번주소"></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><input type="text" id="sample4_detailAddress" size="33" placeholder="상세주소"></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2"><input type="text" id="sample4_extraAddress" size="33" placeholder="참고항목"></td>
+                  </tr>   
+              </form>
+              </tbody>
+      
+          </table>
+      
+      <span id="guide" style="color:#999;display:none"></span>
+      <pre><code>
+        <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>코드 예시를 웹 페이지에 표시</title>
+    <style>
+      pre {
+        white-space: pre-wrap; /* 줄바꿈 유지 */
+      }
+    </style>
+  </head>
+  <body>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;실행코드</h3>
+    <pre class="bordered-pre">
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang=&quot;en&quot;&gt;
+      &lt;head&gt;
+          &lt;meta charset=&quot;UTF-8&quot;&gt;
+          &lt;title&gt;회원가입&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+          &lt;h1&gt;2020E7025_심재익&lt;/h1&gt;
+          &lt;hr&gt;
+          &lt;table border=&quot;2&quot; style=&quot;width: 500; height: 700;&quot;&gt;
+              &lt;caption&gt;회원가입&lt;/caption&gt;
+              &lt;tbody&gt;
+              &lt;form&gt;
+                  &lt;tr&gt;
+                      &lt;td style=&quot;text-align: center;&quot;&gt;사용자 ID&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; size=&quot;20&quot; value=&quot;&quot; /&gt;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;확인&quot; /&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td style=&quot;text-align: center;&quot;&gt;비밀 번호&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;password&quot; size=&quot;20&quot; value=&quot;&quot; /&gt;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;확인&quot; /&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td style=&quot;text-align: center;&quot;&gt;이메일&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; size=&quot;20&quot; value=&quot;&quot; /&gt;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;확인&quot; /&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td style=&quot;text-align: center;&quot;&gt;사용자(이름)&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; size=&quot;20&quot; value=&quot;&quot; /&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td colspan=&quot;2&quot; style=&quot;text-align: center;&quot;&gt;&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;1&quot; checked /&gt;남자
+                          &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;2&quot; /&gt;여자
+                          &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;3&quot; /&gt;선택안함&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td style=&quot;text-align: center;&quot;&gt;생년월일&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; size=&quot;20&quot; value=&quot;&quot; /&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td style=&quot;text-align: center;&quot;&gt;국적&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; list=&quot;what&quot; /&gt;
+                          &lt;datalist id=&quot;what&quot;&gt;
+                              &lt;option value=&quot;Korea&quot;&gt;&lt;/option&gt;
+                              &lt;option value=&quot;China&quot;&gt;&lt;/option&gt;
+                              &lt;option value=&quot;Japan&quot;&gt;&lt;/option&gt;
+                              &lt;option value=&quot;German&quot;&gt;&lt;/option&gt;
+                              &lt;option value=&quot;Poland&quot;&gt;&lt;/option&gt;
+                              &lt;/datalist&gt;
+                          &lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td style=&quot;text-align: center;&quot;&gt;전화번호&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; size=&quot;20&quot; value=&quot;&quot; /&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;text&quot; id=&quot;sample4_postcode&quot; size=&quot;20&quot; placeholder=&quot;우편번호&quot;&gt;&lt;input type=&quot;button&quot; onclick=&quot;sample4_execDaumPostcode()&quot; value=&quot;우편번호 찾기&quot;&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;text&quot; id=&quot;sample4_roadAddress&quot; size=&quot;33&quot; placeholder=&quot;도로명주소&quot;&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;text&quot; id=&quot;sample4_jibunAddress&quot; size=&quot;33&quot; placeholder=&quot;지번주소&quot;&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;text&quot; id=&quot;sample4_detailAddress&quot; size=&quot;33&quot; placeholder=&quot;상세주소&quot;&gt;&lt;/td&gt;
+                  &lt;/tr&gt;
+                  &lt;tr&gt;
+                      &lt;td colspan=&quot;2&quot;&gt;&lt;input type=&quot;text&quot; id=&quot;sample4_extraAddress&quot; size=&quot;33&quot; placeholder=&quot;참고항목&quot;&gt;&lt;/td&gt;
+                  &lt;/tr&gt;   
+              &lt;/form&gt;
+              &lt;/tbody&gt;
+          &lt;/table&gt;
+      
+      &lt;span id=&quot;guide&quot; style=&quot;color:#999;display:none&quot;&gt;&lt;/span&gt;
+      
+      &lt;script src=&quot;//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js&quot;&gt;&lt;/script&gt;
+      &lt;script&gt;
+          //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+          function sample4_execDaumPostcode() {
+              new daum.Postcode({
+                  oncomplete: function(data) {
+                      // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+      
+                      // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                      // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기한다.
+                      var roadAddr = data.roadAddress; // 도로명 주소 변수
+                      var extraRoadAddr = ''; // 참고 항목 변수
+      
+                      // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                      // 법정동의 경우 마지막 문자가 &quot;동/로/가&quot;로 끝난다.
+                      if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                          extraRoadAddr += data.bname;
+                      }
+                      // 건물명이 있고, 공동주택일 경우 추가한다.
+                      if(data.buildingName !== '' && data.apartment === 'Y'){
+                          extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                      }
+                      // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                      if(extraRoadAddr !== ''){
+                          extraRoadAddr = ' (' + extraRoadAddr + ')';
+                      }
+      
+                      // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                      document.getElementById('sample4_postcode').value = data.zonecode;
+                      document.getElementById(&quot;sample4_roadAddress&quot;).value = roadAddr;
+                      document.getElementById(&quot;sample4_jibunAddress&quot;).value = data.jibunAddress;
+                      
+                      // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+                      if(roadAddr !== ''){
+                          document.getElementById(&quot;sample4_extraAddress&quot;).value = extraRoadAddr;
+                      } else {
+                          document.getElementById(&quot;sample4_extraAddress&quot;).value = '';
+                      }
+      
+                      var guideTextBox = document.getElementById(&quot;guide&quot;);
+                      // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+                      if(data.autoRoadAddress){
+                          var expRoadAddr = data.autoRoadAddress + ' (예상 도로명 주소)';
+                          guideTextBox.innerHTML = expRoadAddr;
+                          guideTextBox.style.display = 'block';
+                      } else {
+                          guideTextBox.innerHTML = '';
+                          guideTextBox.style.display = 'none';
+                      }
+                  }
+              }).open();
+          }
+      &lt;/script&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+    </pre>
+  </body>
+</html>
+    </code></pre>
+    <!-- ------------------------------------------------------------------------------------------------- -->
+    <hr>
+    <H3>유수봉의 Web Form 연습-2</H3>
+    <br><br>
+    <form>
+      <fieldset>
+        <legend>A.색 선택 :</legend>
+        <table border="1px">
+        <tr>
+          <td>__1.Text Color :</td>
+          <td><input type="color" onchange="document.body.style.color=this.value"></td>
+      </tr>
+        <tr>
+          <td>__2.BackGround Color :</td>
+          <td><input type="color" onchange="document.body.style.background=this.value"></td>
+        </tr>
+        </table>
+      </fieldset>
+      <HR>
+        <fieldset>
+        <legend>시간 선택 :</legend>
+        <table border="1px">
+          <tr><td>__3.Month : <input type="month" value="2024-04"><BR></td></tr>
+          <tr><td>__4.Week : <input type="week" value="2024-W15"><BR></td></tr>
+          <tr><td>__5.Date : <input type="date" value="2024-04-10"><BR></td></tr>
+          <tr><td>__6.Time : <input type="time" value="12:34"><BR></td></tr>
+          <tr><td>__7.DateTime : <input type="datetime-local" value="2024-04-10T12:34:56.00"><BR></td></tr>
+        </table>
+        </fieldset>
+        <HR>
+          <fieldset>
+        <legend>값 입력</legend>
+        <table border="1px">
+          <tr><td>__8.스핀 (0.0~10.0) : <input type="number" min="0.0" max="10.0" step="0.5" value="3.5"><BR></td></tr>
+          <tr><td>__9.슬라이드 바 : 0&deg; <input type="range" min="0" max="100" list="temp" value="3.5">100&deg;</td></tr>
+          <datalist id="temp">
+              <option value="10" label="Low">
+              <option value="50" label="Medium">
+              <option value="90" label="High">
+          </datalist>
+        </table> 
+      </fieldset>
+        <HR>
+          <fieldset>
+        <legend>형식을 가진 텍스트 :</legend>
+        <table border="1px">
+          <tr><td>_10.Hint : <input type="text" placeholder="한글이름"><BR></td></tr>
+          <tr><td>_11.Mail : <input type="email" placeholder="id@host"></td>
+              <td><input type="submit" value="전송"><BR></td></tr>
+          <tr><td>_12. URL : <input type="url" placeholder="http://"><BR></td></tr>
+          <tr><td>_13. Tel : <input type="tel" placeholder="010-1234-5678"><BR></td></tr>
+          <tr><td>_14.Search : <input type="search" placeholder="검색어"></td>
+              <td><input type="button" value="검색"><BR></td></tr>
+              </table>
+            </fieldset>
+            <fieldset>
+              <legend>_15. Naver Search : </legend>
+              <table border="1px">
+                <tr>
+                  <td><a HREF="Lab_Naver.html" target="_blank"><button type="button"> 네이버 검색 </button></a><BR></td>
+                </tr>
+              </table>
+            </fieldset>
+            <pre><code>
+              <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <title>코드 예시를 웹 페이지에 표시</title>
+          <style>
+            pre {
+              white-space: pre-wrap; /* 줄바꿈 유지 */
+            }
+          </style>
+        </head>
+        <body>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;실행코드</h3>
+          <pre class="bordered-pre">
+              &lt;!DOCTYPE html&gt;
+              &lt;html lang=&quot;en&quot;&gt;
+              
+              &lt;head&gt;
+                  &lt;meta charset=&quot;UTF-8&quot;&gt;
+                  &lt;title&gt;유수봉 : 웹 폼 연습-2&lt;/title&gt;
+              &lt;/head&gt;
+              
+              &lt;body&gt;
+                  &lt;H3&gt;유수봉의 Web Form 연습-2&lt;/H3&gt;
+                  &lt;HR&gt;
+                  &lt;form&gt;
+                    &lt;fieldset&gt;
+                      &lt;legend&gt;A.색 선택 :&lt;/legend&gt;
+                      &lt;table border=&quot;1px&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td&gt;__1.Text Color :&lt;/td&gt;
+                        &lt;td&gt;&lt;input type=&quot;color&quot; onchange=&quot;document.body.style.color=this.value&quot;&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td&gt;__2.BackGround Color :&lt;/td&gt;
+                        &lt;td&gt;&lt;input type=&quot;color&quot; onchange=&quot;document.body.style.background=this.value&quot;&gt;&lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;/table&gt;
+                    &lt;/fieldset&gt;
+                    &lt;HR&gt;
+                      &lt;fieldset&gt;
+                      &lt;legend&gt;시간 선택 :&lt;/legend&gt;
+                      &lt;table border=&quot;1px&quot;&gt;
+                        &lt;tr&gt;&lt;td&gt;__3.Month : &lt;input type=&quot;month&quot; value=&quot;2024-04&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__4.Week : &lt;input type=&quot;week&quot; value=&quot;2024-W15&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__5.Date : &lt;input type=&quot;date&quot; value=&quot;2024-04-10&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__6.Time : &lt;input type=&quot;time&quot; value=&quot;12:34&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__7.DateTime : &lt;input type=&quot;datetime-local&quot; value=&quot;2024-04-10T12:34:56.00&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                      &lt;/table&gt;
+                      &lt;/fieldset&gt;
+                      &lt;HR&gt;
+                        &lt;fieldset&gt;
+                      &lt;legend&gt;값 입력&lt;/legend&gt;
+                      &lt;table border=&quot;1px&quot;&gt;
+                        &lt;tr&gt;&lt;td&gt;__8.스핀 (0.0~10.0) : &lt;input type=&quot;number&quot; min=&quot;0.0&quot; max=&quot;10.0&quot; step=&quot;0.5&quot; value=&quot;3.5&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__9.슬라이드 바 : 0&amp;deg; &lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; list=&quot;temp&quot; value=&quot;3.5&quot;&gt;100&amp;deg;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;datalist id=&quot;temp&quot;&gt;
+                            &lt;option value=&quot;10&quot; label=&quot;Low&quot;&gt;
+                            &lt;option value=&quot;50&quot; label=&quot;Medium&quot;&gt;
+                            &lt;option value=&quot;90&quot; label=&quot;High&quot;&gt;
+                        &lt;/datalist&gt;
+                      &lt;/table&gt; 
+                    &lt;/fieldset&gt;
+                      &lt;HR&gt;
+                        &lt;fieldset&gt;
+                      &lt;legend&gt;형식을 가진 텍스트 :&lt;/legend&gt;
+                      &lt;table border=&quot;1px&quot;&gt;
+                        &lt;tr&gt;&lt;td&gt;_10.Hint : &lt;input type=&quot;text&quot; placeholder=&quot;한글이름&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;_11.Mail : &lt;input type=&quot;email&quot; placeholder=&quot;id@host&quot;&gt;&lt;/td&gt;
+                            &lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;전송&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;_12. URL : &lt;input type=&quot;url&quot; placeholder=&quot;http://&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;_13. Tel : &lt;input type=&quot;tel&quot; placeholder=&quot;010-1234-5678&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;_14.Search : &lt;input type=&quot;search&quot; placeholder=&quot;검색어&quot;&gt;&lt;/td&gt;
+                            &lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;검색&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                            &lt;/table&gt;
+                          &lt;/fieldset&gt;
+                          &lt;fieldset&gt;
+                            &lt;legend&gt;_15. Naver Search : &lt;/legend&gt;
+                            &lt;table border=&quot;1px&quot;&gt;
+                              &lt;tr&gt;
+                                &lt;td&gt;&lt;a HREF=&quot;Lab_Naver.html&quot; target=&quot;_blank&quot;&gt;&lt;button type=&quot;button&quot;&gt; 네이버 검색 &lt;/button&gt;&lt;/a&gt;&lt;BR&gt;&lt;/td&gt;
+                              &lt;/tr&gt;
+                            &lt;/table&gt;
+                          &lt;/fieldset&gt;
+                      &lt;HR&gt;
+              &lt;/body&gt;
+              &lt;/html&gt;
+          </pre>
+        </body>
+      </html>
+        </code></pre>
+
+      <hr>
+      <H3>► 봄을 좋아하는 회원님의 정보를 입력하시오. ◀</H3>
+      <HR>
+      <form>
+          <fieldset>
+              <legend>신입 회원 정보</legend>
+              ▶︎ 이름 : 
+              <input type="text" placeholder="심재익"><BR>
+              ▶︎ 전공 : 
+              <input type="text" placeholder="컴퓨터공학"><BR>
+              ▶︎ 학번 : 
+              <input type="text" placeholder="2020E7025"><BR>
+              ▶︎ 별자리:
+              <input type="text"  list="star" placeholder="물고기자리(2월19~3월20일)" style="width: 195px;">
+                <datalist id="star">
+                  <option value="염소자리">12월25일~1월19일</option>
+                  <option value="물병자리">1월20일~2월18일</option>
+                  <option value="물고기자리">2월19일~3월20일</option>
+                  <option value="양자리">3월21일~4월19일</option>
+                  <option value="황소자리">4월20일~5월20일</option>
+                  <option value="쌍둥이자리">5월21일~6월21일</option>
+                  <option value="게자리">6월22일~7월22일</option>
+                  <option value="사자자리">7월23일~8월22일</option>
+                  <option value="처자리">8월20일~9월18일</option>
+                  <option value="천칭자리">9월23일~10월22일</option>
+                  <option value="전갈자리">10월23일~11월22일</option>
+                  <option value="궁수자리">11월23일~12월22일</option>
+                </datalist>
+                <br>
+              ▶︎ 이메일 : 
+              <input type="text" placeholder="simji0319@naver.com" style="width: 191px;"><BR>
+              ▶︎ 홈페이지 : 
+              <input type="text" placeholder="tlawodlr01@dothome.co.kr." style="width: 177px;"><BR>
+                ▶︎ 전화번호 : 
+                <input type="text" placeholder="010-1234-5678" style="width: 177px;"><br>
+                ▶︎ 좋아하는 계절 : <br>
+                <span class="seasons">
+                    <input type="radio" name="china" value="1" checked>Spring
+                    <input type="radio" name="china" value="2">Summer
+                    <input type="radio" name="china" value="3">Fall
+                    <input type="radio" name="china" value="4">Winter   
+                </span><br>
+                ▶︎ 등록일자 : 
+                <input type="date" value="2024-05-10" style="width: 120px;"><br>
+                <div id="pic">
+                  <img src="vv.png" alt="심재익" width="200px" height="200px">
+                </div>
+              </fieldset>
+              <HR>
+          <p>▶︎ 작성자 : 심재익(simji0319@naver.com)</p>
+<!-- ------------------------------------------------------------------------------------------------- -->
+      <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+      <script>
+          //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+          function sample4_execDaumPostcode() {
+              new daum.Postcode({
+                  oncomplete: function(data) {
+                      // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+      
+                      // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                      // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                      var roadAddr = data.roadAddress; // 도로명 주소 변수
+                      var extraRoadAddr = ''; // 참고 항목 변수
+      
+                      // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                      // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                      if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                          extraRoadAddr += data.bname;
+                      }
+                      // 건물명이 있고, 공동주택일 경우 추가한다.
+                      if(data.buildingName !== '' && data.apartment === 'Y'){
+                          extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                      }
+                      // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                      if(extraRoadAddr !== ''){
+                          extraRoadAddr = ' (' + extraRoadAddr + ')';
+                      }
+      
+                      // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                      document.getElementById('sample4_postcode').value = data.zonecode;
+                      document.getElementById("sample4_roadAddress").value = roadAddr;
+                      document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+                      
+                      // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+                      if(roadAddr !== ''){
+                          document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+                      } else {
+                          document.getElementById("sample4_extraAddress").value = '';
+                      }
+      
+                      var guideTextBox = document.getElementById("guide");
+                      // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+                      if(data.autoRoadAddre){
+                    var expJibunAddr = data.autoJibunAddress;
+                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+                    guideTextBox.style.display = 'block';
+                } else {
+                    guideTextBox.innerHTML = '';
+                    guideTextBox.style.display = 'none';
+                }
+            }
+        }).open();
+    }
+</script>
+</body>
+</html>

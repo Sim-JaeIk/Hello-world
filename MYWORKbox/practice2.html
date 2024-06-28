@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice_2</title>
+    <style>
+      .container {
+        width: 100%;
+        height: 100%;
+        --color: #e1e1e1;
+        background-color: #f3f3f3;
+        background-image: linear-gradient(
+            0deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          ),
+          linear-gradient(
+            90deg,
+            transparent 24%,
+            var(--color) 25%,
+            var(--color) 26%,
+            transparent 27%,
+            transparent 74%,
+            var(--color) 75%,
+            var(--color) 76%,
+            transparent 77%,
+            transparent
+          );
+        background-size: 55px 55px;
+      }
+      .bordered-pre {
+        border: 2px solid #4caf50; /* 테두리 색상을 녹색으로 설정 */
+        padding: 10px; /* 내부 여백을 추가하여 텍스트와 테두리 사이 간격을 조정 */
+        margin: 20px; /* 외부 여백을 추가하여 다른 요소들과의 간격을 조정 */
+        overflow: auto; /* 내용이 넘치면 스크롤바를 표시 */
+        background-color: #e6dddd; /* 배경색 설정 */
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+        width: 700px;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <hr />
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;4주차_WEB-04</h1>
+    <img src="/MYWORKbox/prabox2/test1.png" width="70%" height="70%" alt="test1" />
+    <hr />
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;5주차_WEB-05</h1>
+    <img src="/MYWORKbox/prabox2/test2.png" width="70%" height="70%" alt="test2" />
+    <img src="/MYWORKbox/prabox2/test3_1.png" width="70%" height="70%" alt="test3_1" />
+    <img src="/MYWORKbox/prabox2/test3_2.png" width="70%" height="70%" alt="test3_2" />
+    <img src="/MYWORKbox/prabox2/test4.png" width="70%" height="70%" alt="test4" />
+    <img src="/MYWORKbox/prabox2/test5.png" width="70%" height="70%" alt="test5" />
+    <img src="/MYWORKbox/prabox2/test6.png" width="70%" height="70%" alt="test6" />
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼ 로그인 폼 코드</h3>
+    <pre class="bordered-pre"><code>
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;로그인 폼&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;h3&gt;로그인 폼&lt;/h3&gt;
+      &lt;hr /&gt;
+      &lt;form name=&quot;fo&quot; method=&quot;get&quot;&gt;
+        사용자 ID : &lt;input type=&quot;text&quot; size=&quot;15&quot; value=&quot;&quot; /&gt;&lt;br /&gt;
+        비밀 번호 : &lt;input type=&quot;password&quot; size=&quot;15&quot; value=&quot;&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;완료&quot; /&gt;&lt;br /&gt;
+        &lt;input type=&quot;button&quot; value=&quot;유수봉버튼&quot; /&gt;&lt;br /&gt;
+        &lt;input type=&quot;reset&quot; value=&quot;유수봉리셋&quot; /&gt;&lt;br /&gt;
+        &lt;input type=&quot;image&quot; src=&quot;image.png&quot; width=&quot;50&quot; height=&quot;50&quot; value=&quot;유수봉 image&quot; /&gt;&lt;br /&gt;
+        자소서 : &lt;textarea cols=&quot;20&quot; rows=&quot;5&quot;&gt;이곳에 자기소개서 작성&lt;/textarea&gt;&lt;br /&gt;
+        나라 :
+        &lt;input type=&quot;text&quot; list=&quot;countries&quot; /&gt;
+        &lt;datalist id=&quot;countries&quot;&gt;
+          &lt;option value=&quot;가나&quot;&gt;&lt;/option&gt;
+          &lt;option value=&quot;스위스&quot;&gt;&lt;/option&gt;
+          &lt;option value=&quot;브라질&quot;&gt;&lt;/option&gt;&lt;/datalist&gt;&lt;br /&gt;
+        보고 싶은 것들 :
+        &lt;input type=&quot;text&quot; list=&quot;what&quot; /&gt;
+        &lt;datalist id=&quot;what&quot;&gt;
+          &lt;option value=&quot;집&quot;&gt;&lt;/option&gt;
+          &lt;option value=&quot;음식&quot;&gt;&lt;/option&gt;
+          &lt;option value=&quot;가족&quot;&gt;&lt;/option&gt;
+        &lt;/datalist&gt;
+        &lt;hr /&gt;
+        &lt;!--버튼 폼 만들기--&gt;
+        &lt;button type=&quot;button&quot;&gt;버튼&lt;/button&gt;&lt;br /&gt;
+        &lt;hr /&gt;
+        &lt;!--선택형 입력 만들기--&gt;
+        짜장면 &lt;input type=&quot;checkbox&quot; value=&quot;1&quot; /&gt; 짬뽕
+        &lt;input type=&quot;checkbox&quot; value=&quot;2&quot; checked /&gt; 탕수육
+        &lt;input type=&quot;checkbox&quot; value=&quot;3&quot; /&gt;
+        &lt;br /&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;china&quot; value=&quot;1&quot; /&gt; 짜장
+        &lt;input type=&quot;radio&quot; name=&quot;china&quot; value=&quot;2&quot; checked /&gt; 짬뽕
+        &lt;input type=&quot;radio&quot; name=&quot;china&quot; value=&quot;3&quot; /&gt; 탕수육
+        &lt;br /&gt;
+        &lt;input type=&quot;radio&quot; name=&quot;korea&quot; value=&quot;2&quot; checked&gt; 국수
+        &lt;input type=&quot;radio&quot; name=&quot;korea&quot; value=&quot;3&quot; /&gt; 냉면
+        &lt;hr /&gt;
+        &lt;select name=&quot;china&quot;&gt;
+          &lt;option value=&quot;1&quot;&gt;짜장면&lt;/option&gt;
+          &lt;option value=&quot;2&quot; selected&gt;짬뽕&lt;/option&gt;
+          &lt;option value=&quot;3&quot;&gt;탕수육&lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/form&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+    </code></pre>
+    <img src="/MYWORKbox/prabox2/test7.png" width="70%" height="70%" alt="test7" />
+    <img src="/MYWORKbox/prabox2/test8.png" width="70%" height="70%" alt="test8" />
+    <hr>
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;6주차_WEB-06</h1>
+    <br><br>
+    <form>
+      <fieldset>
+        <legend>A.색 선택 :</legend>
+        <table border="1px">
+        <tr>
+          <td>__1.Text Color :</td>
+          <td><input type="color" onchange="document.body.style.color=this.value"></td>
+      </tr>
+        <tr>
+          <td>__2.BackGround Color :</td>
+          <td><input type="color" onchange="document.body.style.background=this.value"></td>
+        </tr>
+        </table>
+      </fieldset>
+      <HR>
+        <fieldset>
+        <legend>시간 선택 :</legend>
+        <table border="1px">
+          <tr><td>__3.Month : <input type="month" value="2024-04"><BR></td></tr>
+          <tr><td>__4.Week : <input type="week" value="2024-W15"><BR></td></tr>
+          <tr><td>__5.Date : <input type="date" value="2024-04-10"><BR></td></tr>
+          <tr><td>__6.Time : <input type="time" value="12:34"><BR></td></tr>
+          <tr><td>__7.DateTime : <input type="datetime-local" value="2024-04-10T12:34:56.00"><BR></td></tr>
+        </table>
+        </fieldset>
+        <HR>
+          <fieldset>
+        <legend>값 입력</legend>
+        <table border="1px">
+          <tr><td>__8.스핀 (0.0~10.0) : <input type="number" min="0.0" max="10.0" step="0.5" value="3.5"><BR></td></tr>
+          <tr><td>__9.슬라이드 바 : 0&deg; <input type="range" min="0" max="100" list="temp" value="3.5">100&deg;</td></tr>
+          <datalist id="temp">
+              <option value="10" label="Low">
+              <option value="50" label="Medium">
+              <option value="90" label="High">
+          </datalist>
+        </table> 
+      </fieldset>
+        <HR>
+          <fieldset>
+        <legend>형식을 가진 텍스트 :</legend>
+        <table border="1px">
+          <tr><td>_10.Hint : <input type="text" placeholder="한글이름"><BR></td></tr>
+          <tr><td>_11.Mail : <input type="email" placeholder="id@host"></td>
+              <td><input type="submit" value="전송"><BR></td></tr>
+          <tr><td>_12. URL : <input type="url" placeholder="http://"><BR></td></tr>
+          <tr><td>_13. Tel : <input type="tel" placeholder="010-1234-5678"><BR></td></tr>
+          <tr><td>_14.Search : <input type="search" placeholder="검색어"></td>
+              <td><input type="button" value="검색"><BR></td></tr>
+              </table>
+            </fieldset>
+            <fieldset>
+              <legend>_15. Naver Search : </legend>
+              <table border="1px">
+                <tr>
+                  <td><a HREF="Lab_Naver.html" target="_blank"><button type="button"> 네이버 검색 </button></a><BR></td>
+                </tr>
+              </table>
+            </fieldset>
+            <pre><code>
+              <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <title>코드 예시를 웹 페이지에 표시</title>
+          <style>
+            pre {
+              white-space: pre-wrap; /* 줄바꿈 유지 */
+            }
+          </style>
+        </head>
+        <body>
+          <h3>&nbsp;&nbsp;&nbsp;&nbsp;▲ 실행코드</h3>
+          <pre class="bordered-pre">
+              &lt;!DOCTYPE html&gt;
+              &lt;html lang=&quot;en&quot;&gt;
+              
+              &lt;head&gt;
+                  &lt;meta charset=&quot;UTF-8&quot;&gt;
+                  &lt;title&gt;유수봉 : 웹 폼 연습-2&lt;/title&gt;
+              &lt;/head&gt;
+              
+              &lt;body&gt;
+                  &lt;H3&gt;유수봉의 Web Form 연습-2&lt;/H3&gt;
+                  &lt;HR&gt;
+                  &lt;form&gt;
+                    &lt;fieldset&gt;
+                      &lt;legend&gt;A.색 선택 :&lt;/legend&gt;
+                      &lt;table border=&quot;1px&quot;&gt;
+                      &lt;tr&gt;
+                        &lt;td&gt;__1.Text Color :&lt;/td&gt;
+                        &lt;td&gt;&lt;input type=&quot;color&quot; onchange=&quot;document.body.style.color=this.value&quot;&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                      &lt;tr&gt;
+                        &lt;td&gt;__2.BackGround Color :&lt;/td&gt;
+                        &lt;td&gt;&lt;input type=&quot;color&quot; onchange=&quot;document.body.style.background=this.value&quot;&gt;&lt;/td&gt;
+                      &lt;/tr&gt;
+                      &lt;/table&gt;
+                    &lt;/fieldset&gt;
+                    &lt;HR&gt;
+                      &lt;fieldset&gt;
+                      &lt;legend&gt;시간 선택 :&lt;/legend&gt;
+                      &lt;table border=&quot;1px&quot;&gt;
+                        &lt;tr&gt;&lt;td&gt;__3.Month : &lt;input type=&quot;month&quot; value=&quot;2024-04&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__4.Week : &lt;input type=&quot;week&quot; value=&quot;2024-W15&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__5.Date : &lt;input type=&quot;date&quot; value=&quot;2024-04-10&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__6.Time : &lt;input type=&quot;time&quot; value=&quot;12:34&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__7.DateTime : &lt;input type=&quot;datetime-local&quot; value=&quot;2024-04-10T12:34:56.00&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                      &lt;/table&gt;
+                      &lt;/fieldset&gt;
+                      &lt;HR&gt;
+                        &lt;fieldset&gt;
+                      &lt;legend&gt;값 입력&lt;/legend&gt;
+                      &lt;table border=&quot;1px&quot;&gt;
+                        &lt;tr&gt;&lt;td&gt;__8.스핀 (0.0~10.0) : &lt;input type=&quot;number&quot; min=&quot;0.0&quot; max=&quot;10.0&quot; step=&quot;0.5&quot; value=&quot;3.5&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;__9.슬라이드 바 : 0&amp;deg; &lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; list=&quot;temp&quot; value=&quot;3.5&quot;&gt;100&amp;deg;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;datalist id=&quot;temp&quot;&gt;
+                            &lt;option value=&quot;10&quot; label=&quot;Low&quot;&gt;
+                            &lt;option value=&quot;50&quot; label=&quot;Medium&quot;&gt;
+                            &lt;option value=&quot;90&quot; label=&quot;High&quot;&gt;
+                        &lt;/datalist&gt;
+                      &lt;/table&gt; 
+                    &lt;/fieldset&gt;
+                      &lt;HR&gt;
+                        &lt;fieldset&gt;
+                      &lt;legend&gt;형식을 가진 텍스트 :&lt;/legend&gt;
+                      &lt;table border=&quot;1px&quot;&gt;
+                        &lt;tr&gt;&lt;td&gt;_10.Hint : &lt;input type=&quot;text&quot; placeholder=&quot;한글이름&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;_11.Mail : &lt;input type=&quot;email&quot; placeholder=&quot;id@host&quot;&gt;&lt;/td&gt;
+                            &lt;td&gt;&lt;input type=&quot;submit&quot; value=&quot;전송&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;_12. URL : &lt;input type=&quot;url&quot; placeholder=&quot;http://&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;_13. Tel : &lt;input type=&quot;tel&quot; placeholder=&quot;010-1234-5678&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                        &lt;tr&gt;&lt;td&gt;_14.Search : &lt;input type=&quot;search&quot; placeholder=&quot;검색어&quot;&gt;&lt;/td&gt;
+                            &lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;검색&quot;&gt;&lt;BR&gt;&lt;/td&gt;&lt;/tr&gt;
+                            &lt;/table&gt;
+                          &lt;/fieldset&gt;
+                          &lt;fieldset&gt;
+                            &lt;legend&gt;_15. Naver Search : &lt;/legend&gt;
+                            &lt;table border=&quot;1px&quot;&gt;
+                              &lt;tr&gt;
+                                &lt;td&gt;&lt;a HREF=&quot;Lab_Naver.html&quot; target=&quot;_blank&quot;&gt;&lt;button type=&quot;button&quot;&gt; 네이버 검색 &lt;/button&gt;&lt;/a&gt;&lt;BR&gt;&lt;/td&gt;
+                              &lt;/tr&gt;
+                            &lt;/table&gt;
+                          &lt;/fieldset&gt;
+                      &lt;HR&gt;
+              &lt;/body&gt;
+              &lt;/html&gt;
+          </pre>
+        </body>
+      </html>
+        </code></pre>
+  </body>
+</html>
